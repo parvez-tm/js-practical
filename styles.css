@@ -9,7 +9,6 @@ body {
   background-color: white;
   min-height: 100vh;
   overflow: hidden;
-  /* position: relative; */
 }
 
 nav {
@@ -21,6 +20,7 @@ nav {
   gap: 0.5rem;
   border-bottom: solid 1px #aaa;
   background-color: #eee;
+  z-index: 10;
 }
 
 nav a {
