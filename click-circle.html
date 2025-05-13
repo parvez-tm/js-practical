@@ -26,17 +26,30 @@
   </nav>
 
   <script>
-    let circle = document.createElement('div')
-    circle.classList.add('circle')
-
+    let count = 0
     document.addEventListener('click', (e) => {
-        let num = Math.floor(Math.random() * 100);
-        circle.style.width = num+'px'
-        circle.style.height = num+'px'
-        console.log(num,"fad");
-        document.body.appendChild(circle)
+      let circle = document.createElement('div')
+      let ele = document.getElementsByClassName('circle')
+      count = count % 3
+      count ++ 
+      console.log(count,"as");
+      if(count > 1){
+        console.log("HEre");
+        for (var i = ele.length - 1; i >= 0; --i) {
+        ele[i].remove();
+        count = 2
+      }
+      }
+      circle.classList.add('circle')
+      let num = Math.floor(Math.random() * 100);
+      circle.style.width = (num)+'px'
+      circle.style.height = (num)+'px'
+      circle.style.top = (e.clientY - (num/2))+'px'
+      circle.style.left = (e.clientX - (num/2))+'px'
+      document.body.appendChild(circle)
+
     })
-  </script>
+      </script>
 </body>
 
 </html>
